@@ -1,0 +1,43 @@
+{
+  "name": "library-name",
+  "version": "1.0.0",
+  "description": "Typescript library template",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ts-mocha lib/**/*.test.ts",
+    "watch": "cp README.md dist && ts-node generate-package-json.ts && tsc -w",
+    "build": "cp README.md dist && ts-node generate-package-json.ts && tsc",
+    "lint": "eslint . --ext .ts --fix --ignore-pattern dist",
+    "publish-version": "npm run build && cd dist && npm publish",
+    "version-patch": "npm run build && cd dist && npm version patch && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UlisesSchreiner/local-configuration-manager.git"
+  },
+  "keywords": [
+    "config",
+    "read",
+    "json"
+  ],
+  "author": "Ulises Schreiner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UlisesSchreiner/local-configuration-manager/issues"
+  },
+  "homepage": "https://github.com/UlisesSchreiner/local-configuration-manager#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "@types/mocha": "^10.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "ts-node": "^10.9.1",
+    "ts-mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
